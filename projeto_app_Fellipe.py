@@ -12,123 +12,165 @@ dinheiro, pix, ou cartão de crédito ou débito. O sistema deve confirmar se o 
 
 '''
 
-print('Padaria Peter Pão - o melhor pão da cidade!🥞🥐🥖')
+print('Padaria Peter Pão - o melhor pão da cidade! 🥞🥐🥖')
 
 nome_gentil = input('Qual é o seu nome?: ')
+print(f"Olá, {nome_gentil}! Seja bem-vindo(a) à nossa padaria!")
 
-print(f'Olá, {nome_gentil}! Seja bem-vindo(a) à nossa padaria!')
-
-print("1- Fazer cadastro")
-print("2- Ver o cardápio")
-print("3- Meus pedidos")
-print("4- Informações")
-print("0- Sair")
-
-
-acesso_menu = input("\n O que você quer fazer?: ")
+total_conta = 0.0  
+carrinho = []
 
 while True:
+    print("\n" + "="*28)
+    print("--- MENU PADARIA ---")
+    print("1 - Entrar\n2- Fazer cadastro\n3- Ver o cardápio e Pedir\n4- Meus pedidos / Total\n5- Informações da loja")
+    print("0- Sair")
+    print(f"💰 Total acumulado: R${total_conta:.2f}")
+    print("="*28)
 
-   if acesso_menu == "1":
-       print("Fazer cadastro")
+    acesso_menu = input("\nO que você quer fazer?: ")
 
-
-       email_cliente = input("Digite o email:")
-       endereço_cliente = input("Digite o endereço:")
-       telefone_cliente = input("Digite o telefone:")
-
-       print("Cadastro realizado com sucesso!")
-       #Código para fazer cadastro
-       break
-      
-   elif acesso_menu == "2":
-       print("Ver o cardápio")
-       print("1- Salgados")
-       print("2- Doces")
-       print("3- Bebidas")
-       print("4- Promoções")
-       print("5- Lanches")
-       opcao_numero = input("Escolha uma opção: ")
-       if opcao_numero == "1":
-          print("Salgados")
-          print("1 - Coxinha - R$5,00")
-          print("2 - Kibe - R$6,00")
-          print("3 - Empada - R$4,00")
-          print("4 - Esfiha - R$5,00")
-          print("5 - Pão de queijo - R$3,00")
-          print("6 - Pão francês - R$2,00")
-          print("7 - Pão na chapa - R$3,50")
-          print("8 - Torta de frango - R$8,00")
-          break
-
-       elif opcao_numero == "2":
-         print("Doces")
-         print("9 - Brigadeiro - R$3,00")
-         print("10 - Beijinho - R$3,00")
-         print("11 - Pudim - R$5,00")
-         print("12 - Torta de limão - R$6,00")
-         print("13 - Torta de morango - R$7,00")
-         print("14 - Torta de chocolate - R$8,00")
-         print("15 - Sonho de doce de leite - R$6,00")
-         print("16 - Sonho de chocolate - R$7,00")
-         print("17 - Bolo de cenoura - R$10,00")
-         print("18 - Bolo de chocolate - R$12,00")
-         print("19 - Bolo de laranja - R$11,00")
-         break
-        
-       elif opcao_numero == "3":
-         print("Bebidas")
-         print("20 - Suco de laranja - R$4,00")
-         print("21 - Suco de maracujá - R$4,00")
-         print("22 - Suco de abacaxi - R$4,00")
-         print("23 - Suco de uva - R$4,00")
-         print("24 - Suco de limão - R$4,00")
-         print("25 - Refrigerante - R$5,00")
-         print("26 - Água mineral - R$2,00")
-         print("27 - Café - R$3,00")
-         print("28 - Chá - R$3,00")
-         break
-
-       elif opcao_numero == "4":
-         print("Promoções")
-         print("29 - Combo 1: Coxinha + Suco de laranja - R$8,00")
-         print("30 - Combo 2: Torta de frango + Refrigerante - R$12,00")
-         print("31 - Combo 3: Bolo de chocolate + Café - R$14,00")
-         print("32 - Combo 4: Pão de queijo + Chá - R$5,00")
-         print("33 - Combo 5: Esfiha + Suco de maracujá - R$7,00")
-         #Código para exibir promoções
-         break
     
-       
- 
+    if acesso_menu == "1":
+        print("\n--- ENTRAR ---")
+        def realizar_login_seguro():
+         senha_padrao = "1234"
 
-   elif acesso_menu == "3":
-        print("Meus pedidos")
+         print('\n--- Sistema de Login Seguro ---')
+         nome_usuario = input('Digite seu login: ')
+         senha_digitada = input('Digite sua senha: ')
+         if senha_digitada == senha_padrao:
+           print(f'\n[SUCESSO] Bem-vindo, {nome_usuario}! Acesso concedido.')
+         else:
+          print('\n[ERRO] Senha incorreta! Acesso negado.')
 
-        print("Exibir meus pedidos")
-        print("1 - A pagar")
-        print("2 - Preparando")
-        print("3 - A caminho")
-        print("4 - Finalizado")
-        print("5 - Cancelado")
-        print("6 - Reembolso")
-        opcao: str = input("Escolha uma opção: ")
-        #Código para exibir meus pedidos
+        print('---------------------------\n')
+
+        realizar_login_seguro()
+    
+    
+    elif acesso_menu == "2":
+        print("\n--- FAZER CADASTRO ---")
+        email_cliente = input("Digite o seu email: ")
+        endereco_cliente = input("Digite o seu endereço: ")
+        cpf_cnpj_cliente = input("Digite o seu CPF/CNPJ: ")
+        telefone_cliente = input("Digite o seu telefone: ")
+        print("✅ Cadastro realizado com sucesso!")
+
+    elif acesso_menu == "3":
+        print("\n--- CARDÁPIO ---")
+        print("1- Salgados\n2- Doces\n3- Bebidas\n4- Promoções")
+        categoria = input("Escolha uma categoria: ")
+
+        if categoria == "1":
+            print("\n[SALGADOS]\n1-Coxinha (R$5)\n2-Kibe (R$6)\n3-Empada (R$4)\n4-Esfiha (R$5)\n5-Pão de Queijo (R$3)\n6-Pão Francês (R$2)\n7-Torta Frango (R$8)")
+            item = input("Digite o NÚMERO do produto: ")
+            
+            
+            nomes = {"1": "Coxinha", "2": "Kibe", "3": "Empada", "4": "Esfiha", "5": "Pão de Queijo", "6": "Pão Francês", "7": "Torta de Frango"}
+            precos = {"1": 5.0, "2": 6.0, "3": 4.0, "4": 5.0, "5": 3.0, "6": 2.0, "7": 8.0}
+            
+            if item in precos:
+                total_conta += precos[item]
+                carrinho.append(nomes[item]) 
+                print(f"✅ {nomes[item]} adicionado! Subtotal: R${total_conta:.2f}")
+            else:
+                print("❌ Número inválido.")
+
+        elif categoria == "2":
+            print("\n[DOCES]\n8-Brigadeiro (R$3)\n9-Beijinho (R$3)\n10-Pudim (R$5)\n11-Tortas (R$8)\n12-Sonho (R$6)\n13-Bolos (R$11)")
+            item = input("Digite o NÚMERO do produto: ")
+            
+            nomes = {"8": "Brigadeiro", "9": "Beijinho", "10": "Pudim", "11": "Torta", "12": "Sonho", "13": "Bolo"}
+            precos = {"8": 3.0, "9": 3.0, "10": 5.0, "11": 8.0, "12": 6.0, "13": 11.0}
+            
+            if item in precos:
+                total_conta += precos[item]
+                carrinho.append(nomes[item])
+                print(f"✅ {nomes[item]} adicionado! Subtotal: R${total_conta:.2f}")
+
+        elif categoria == "4":
+            print("\n[BEBIDAS]\n14-Sucos (R$4)\n15-Refrigerante (R$5)\n16-Café (R$3)")
+            item = input("Digite o NÚMERO do produto: ")
+            
+            nomes = {"14": "Suco", "15": "Refrigerante", "16": "Café"}
+            precos = {"14": 4.0, "15": 5.0, "16": 3.0}
+            
+            if item in precos:
+                total_conta += precos[item]
+                carrinho.append(nomes[item])
+                print(f"✅ {nomes[item]} adicionado! Subtotal: R${total_conta:.2f}")
+
+        elif categoria == "5":
+            print("\n[PROMOÇÕES]\n17-Combo 1 - Coxinha + Suco (R$8)\n18-Combo 2 - Torta + Refrigerante (R$12)\n19-Combo 3 - Esfiha + Suco (R$7)")
+            item = input("Digite o NÚMERO do produto: ")
+            
+            nomes = {"17": "Combo 1", "18": "Combo 2", "19": "Combo 3"}
+            precos = {"17": 8.0, "18": 12.0, "19": 7.0}
+            
+            if item in precos:
+                total_conta += precos[item]
+                carrinho.append(nomes[item])
+                print(f"✅ {nomes[item]} adicionado! Subtotal: R${total_conta:.2f}")
+
+        input("\nAperte ENTER para continuar...")
+
+    elif acesso_menu == "4":
+        print("\n--- RESUMO DO PEDIDO ---")
+        print(f"💵 Valor total a pagar: R${total_conta:.2f}")
+        print("Status: 1-Pagar / 2-Ver Itens / 3-Voltar")
+        opcao_pedido = input("\nO que você quer fazer?: ")
+
+        if opcao_pedido == '1':
+            if total_conta > 0:
+                print("\n1 - Cartão\n2 - Pix")
+                metodo_pagamento = input("Escolha a forma de pagamento: ")
+                
+                if metodo_pagamento == '1':
+                    print("\n[CARTÃO]")
+                    print("1 - Débito\n2 - Crédito\n3 - Vale alimentação\n4 - Cartão Pré-pago")
+                    cartao_tipo = input("Digite qual tipo de cartão: ")
+                    tipos = {"1": "Débito", "2": "Crédito", "3": "Vale Alimentação", "4": "Pré-pago"}
+                    nome_cartao = tipos.get(cartao_tipo, "Cartão Desconhecido")
+                    
+                    print(f"\nMétodo selecionado: {nome_cartao}")
+                    print("⌛ Processando... Aproxime o cartão... Pagamento em análise...")
+                    print("✅ Pagamento realizado com sucesso! Obrigado por comprar em nossa padaria. Volte sempre!")
+                    total_conta = 0 
+                    carrinho = [] 
+                
+                elif metodo_pagamento == '2':
+                    print("\n--- PIX ---")
+                    print("Pague via QR-code ou pela chave Aleatória: 123e4567-e89b-12d3-a456-426614174000/n⌛ Processando...")
+                    print("✅ Pagamento confirmado via PIX! Obrigado por comprar em nossa padaria. Volte sempre!")
+                    total_conta = 0
+                    carrinho = [] 
+            else:
+                print("⚠️ Seu carrinho está vazio!")
+
+        elif opcao_pedido == '2':
+            if len(carrinho) > 0:
+                print("\n--- ITENS NO CARRINHO ---")
+                
+                for i, produto in enumerate(carrinho, 1):
+                    print(f"{i}. {produto}")
+                print(f"\nTotal de itens: {len(carrinho)}")
+                print(f"R${total_conta:.2f}")
+            else:
+                print("\n🛒 O carrinho está vazio.")
+            input("\nAperte ENTER para voltar...")
+
+        elif opcao_pedido == '3':
+            print("Voltando para o menu principal")
+
+    elif acesso_menu == "5":
+        print("\n--- INFORMAÇÕES ---")
+        print("📍 Rua dos Pães, 123 - Centro - 🔗 Veja no Mapa: https://maps.google.com/?q=Padaria+Peter+Pao\n📞 (11) 1234-5678\nHorário de funcionamento: Segunda a sábado, das 6h às 20h")
+        print("Acesse nosso site: https://www.padariapeterpao.com.br")
+
+    elif acesso_menu == "0":
+        print(f"\nSaindo... Tchau, {nome_gentil}, Obrigado pela visita!")
         break
-
-   elif acesso_menu == "4":
-       print("Informações")
     
-       print("Informações")
-       print("Endereço: Rua dos Pães, 123 - Centro")
-       print("Telefone: (11) 1234-5678")
-       print("Horário de funcionamento: Segunda a sábado, das 6h às 20h")
-        #Código para exibir informações
-       break
-   elif acesso_menu == "0":
-       print("Sair")    
-       #Código para sair
-       break
-   
-   else:
-    print("Opção inválida. Por favor, tente novamnete.")
+    else:
+        print("\n❌ Opção inválida.")
