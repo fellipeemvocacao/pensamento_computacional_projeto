@@ -17,9 +17,9 @@ def consulta_cep(cep):
         return 'Error na Consulta. ⚠'
     
 
-print('===Aula de API com Python: Consulta de CEP===')
+print('= Aula de API com Python: Consulta de CEP =')
 
-meu_cep = '02849000'
+meu_cep = '05780300'
 
 resultado = consulta_cep(meu_cep)
 
